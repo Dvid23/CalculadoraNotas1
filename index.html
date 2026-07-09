@@ -267,7 +267,7 @@
     }
 
     function esValido(valor) {
-      return valor >= 0;
+      return valor >= 0 && valor <= 20;
     }
 
     function actualizarEP1() {
@@ -276,7 +276,7 @@
       const s3 = parseFloat(document.getElementById("s3").value);
       const valores = [s1, s2, s3].map(v => isNaN(v) ? 0 : v);
 
-      if (valores.some(v => v < 0)) {
+      if (valores.some(v => v < 0 || v > 20)) {
         document.getElementById("ep1-live").textContent = "inválido";
         return;
       }
@@ -289,7 +289,7 @@
       const s6 = parseFloat(document.getElementById("s6").value);
       const valores = [s4, s5, s6].map(v => isNaN(v) ? 0 : v);
 
-      if (valores.some(v => v < 0)) {
+      if (valores.some(v => v < 0 || v > 20)) {
         document.getElementById("ep2-live").textContent = "inválido";
         return;
       }
@@ -307,8 +307,8 @@
       const evf = parseFloat(document.getElementById("evf").value) || 0;
 
       const valores = [s1, s2, s3, s4, s5, s6, evp, evf];
-      if (valores.some(v => v < 0)) {
-        alert("Las notas no pueden ser Negativas");
+      if (valores.some(v => v < 0 || v > 20)) {
+        alert("Las notas deben estar entre 0 y 20");
         return;
       }
 

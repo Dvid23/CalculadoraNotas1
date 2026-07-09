@@ -23,3 +23,10 @@ def test_rechaza_negativos_en_promo():
         assert False, "Debio lanzar un error"
     except ValueError:
         assert True
+
+def test_rechaza_nota_mayor_a_20():
+    try:
+        calcular_ep1(25, 8, 8)
+        assert False, "Debio lanzar un error"
+    except ValueError:
+        assert True
