@@ -1,7 +1,6 @@
 def validar_nota(nota):
-    if nota < 0:
-        raise ValueError("La nota no puede ser un numero negativo")
-
+    if nota < 0 or nota > 20:
+        raise ValueError("La nota debe estar entre 0 y 20")
 
 def calcular_ep1(sub1, sub2, sub3):
     validar_nota(sub1)
